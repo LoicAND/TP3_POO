@@ -1,0 +1,14 @@
+package adapter;
+
+public class MainA {
+
+    public static void main(String[] args) {
+
+        LecteurCSV lecteur = new LecteurCSV();
+        BurgerAnalytics analytics = new BurgerAnalytics();
+
+        AnalyseurVentes analyseur = new CSVAdapter(lecteur, analytics);
+
+        analyseur.analyser("structural/adapter/ventes.csv");
+    }
+}
